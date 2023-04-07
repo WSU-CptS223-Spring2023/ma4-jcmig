@@ -8,6 +8,13 @@ class BankData
 public:
 	// Are the Big Five necessary?
 	// How will this data work with the std::map?
+	BankData();
+	BankData(int acctNum, double savingsAmount, double checkingAmount);
+	BankData(const BankData& other);
+	BankData(BankData&& other);
+	BankData& operator=(const BankData& other);
+	BankData& operator=(BankData&& other);
+	~BankData();
 
 	int getAcctNum() const; // we do want to return a copy of the int, not the pointer
 	double getSavingsAmount() const; // we do want to return a copy of the double, not the pointer
